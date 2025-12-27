@@ -1,0 +1,12 @@
+h1{
+    /* rgb (0-255 */
+    /* 255,255,255 -->white or  ffffff*/  
+    /* 0,0,0 -->black or 000000*/
+
+    color:rgb(0, 255, 47);
+}
+p{
+    color:rgba(251, 24, 62, 0.829);
+}
+
+/* hsl(hue saturation lightness */
