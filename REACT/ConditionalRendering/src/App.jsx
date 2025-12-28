@@ -1,5 +1,6 @@
 import React from 'react'
-
+import Weather from './Component/Weather'
+import UserStatus from './Component/UserStatus'
 const App = () => {
   const ValidPassword =()=>{
     <h1>Valid Password</h1>
@@ -17,6 +18,8 @@ const App = () => {
   return (
     <div>
      <password isvalid={true}/>
+    < Weather/>
+    <UserStatus loggedIn={true} isAdmin={true}/>
     </div>
   )
 }
