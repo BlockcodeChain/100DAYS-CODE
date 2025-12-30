@@ -1,0 +1,39 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body ,html{
+overflow: hidden;
+}
+.container{
+width:100vw;
+height:100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+.uni{
+position: relative;
+object-fit: cover;
+
+}
+.text{
+    position: absolute;
+   top:40%;
+ text-shadow: 0px 1px 10px black;
+    font-size: 3rem;
+    padding:10px 20px;
+    box-shadow: 0px 0px 15px 2px rgb(255, 255, 255);;
+    border:1px solid white;
+    color: rgb(255, 255, 255);
+    z-index: 50;
+}
+.text:hover{
+
+    color:transparent;
+   border:none;
+   box-shadow: 0 0 0 0 transparent;
+}
