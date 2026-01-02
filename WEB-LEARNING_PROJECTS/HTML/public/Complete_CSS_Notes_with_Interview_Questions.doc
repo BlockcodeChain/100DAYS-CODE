@@ -1,0 +1,1198 @@
+
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <meta charset="utf-8">
+                    <title>Complete CSS Notes</title>
+                </head>
+                <body>
+            <div class="container">
+        <div class="header">
+            <h1>Complete CSS Notes</h1>
+            <p>Master CSS with Animations, Examples &amp; Interview Questions</p>
+        </div>
+
+        <div class="content">
+            <!-- Table of Contents -->
+            <div class="toc">
+                <h2>📚 Table of Contents</h2>
+                <ul>
+                    <li>Introduction to CSS</li>
+                    <li>CSS Selectors</li>
+                    <li>Box Model</li>
+                    <li>Flexbox Layout</li>
+                    <li>Grid Layout</li>
+                    <li>Positioning</li>
+                    <li>CSS Animations</li>
+                    <li>Responsive Design</li>
+                    <li>Interview Questions</li>
+                </ul>
+            </div>
+
+            <!-- Section 1: Introduction -->
+            <div class="section">
+                <h2 class="section-title">1. Introduction to CSS</h2>
+                <span class="interview-tag">⭐ Interview Important</span>
+                
+                <div class="note-card">
+                    <div class="note-title">What is CSS?</div>
+                    <p>CSS (Cascading Style Sheets) is used to style and layout web pages. It controls colors, fonts, spacing, and positioning of HTML elements.</p>
+                    
+                    <div class="important">
+                        <strong>💡 Key Point:</strong> CSS separates presentation from content, making websites maintainable and flexible.
+                    </div>
+
+                    <div class="code-box">
+/* Basic CSS Syntax */
+selector {
+    property: value;
+    property: value;
+}
+
+/* Example */
+h1 {
+    color: blue;
+    font-size: 24px;
+}
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">3 Ways to Add CSS</div>
+                    
+                    <div class="code-box">
+/* 1. Inline CSS */
+&lt;h1 style="color: red;"&gt;Hello&lt;/h1&gt;
+
+/* 2. Internal CSS */
+&lt;style&gt;
+    h1 { color: red; }
+&lt;/style&gt;
+
+/* 3. External CSS (Best Practice) */
+&lt;link rel="stylesheet" href="style.css"&gt;
+                    </div>
+                    
+                    <div class="important">
+                        <strong>Interview Q:</strong> Which method is best and why?<br>
+                        <strong>Answer:</strong> External CSS is best because it promotes reusability, easier maintenance, and better organization.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Selectors -->
+            <div class="section">
+                <h2 class="section-title">2. CSS Selectors</h2>
+                <span class="interview-tag">⭐ Interview Important</span>
+                
+                <div class="note-card">
+                    <div class="note-title">Types of Selectors</div>
+                    
+                    <div class="code-box">
+/* Element Selector */
+p { color: blue; }
+
+/* Class Selector */
+.my-class { color: red; }
+
+/* ID Selector */
+#my-id { color: green; }
+
+/* Universal Selector */
+* { margin: 0; }
+
+/* Descendant Selector */
+div p { color: purple; }
+
+/* Child Selector */
+div &gt; p { color: orange; }
+
+/* Attribute Selector */
+input[type="text"] { border: 1px solid; }
+
+/* Pseudo-class */
+a:hover { color: red; }
+
+/* Pseudo-element */
+p::first-line { font-weight: bold; }
+                    </div>
+
+                    <div class="important">
+                        <strong>Interview Q:</strong> What is the difference between class and ID?<br>
+                        <strong>Answer:</strong> Class can be used multiple times (.) while ID is unique (#). ID has higher specificity than class.
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">CSS Specificity</div>
+                    <p>Determines which CSS rule applies when multiple rules target the same element.</p>
+                    
+                    <div class="code-box">
+/* Specificity Hierarchy (Highest to Lowest) */
+1. Inline styles          (1000 points)
+2. IDs                    (100 points)
+3. Classes, attributes    (10 points)
+4. Elements               (1 point)
+
+/* Example */
+#header { color: blue; }      /* 100 */
+.header { color: red; }       /* 10 */
+h1 { color: green; }          /* 1 */
+
+/* ID wins - text will be blue */
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: Box Model -->
+            <div class="section">
+                <h2 class="section-title">3. CSS Box Model</h2>
+                <span class="interview-tag">⭐ Interview Important</span>
+                
+                <div class="note-card">
+                    <div class="note-title">Understanding the Box Model</div>
+                    <p>Every HTML element is a rectangular box consisting of: Content, Padding, Border, and Margin.</p>
+                    
+                    <div class="demo-box">
+                        <div style="background: #3498db; color: white; padding: 20px; border: 5px solid #e74c3c; margin: 10px;">
+                            Content Area
+                            <div style="font-size: 12px; margin-top: 10px;">Padding: 20px | Border: 5px | Margin: 10px</div>
+                        </div>
+                    </div>
+
+                    <div class="code-box">
+/* Box Model Properties */
+.box {
+    width: 300px;
+    height: 200px;
+    padding: 20px;        /* Space inside */
+    border: 5px solid #000; /* Border */
+    margin: 30px;         /* Space outside */
+}
+
+/* Box-sizing Property */
+.box1 {
+    box-sizing: content-box; /* Default */
+    /* Total width = width + padding + border */
+}
+
+.box2 {
+    box-sizing: border-box; /* Better! */
+    /* Total width = width (includes padding &amp; border) */
+}
+                    </div>
+
+                    <div class="important">
+                        <strong>Interview Q:</strong> What is box-sizing: border-box?<br>
+                        <strong>Answer:</strong> It includes padding and border in the element's total width and height, making sizing more predictable.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: Flexbox -->
+            <div class="section">
+                <h2 class="section-title">4. Flexbox Layout</h2>
+                <span class="interview-tag">⭐ Interview Important</span>
+                
+                <div class="note-card">
+                    <div class="note-title">Flexbox Basics</div>
+                    <p>Flexbox is a one-dimensional layout method for arranging items in rows or columns.</p>
+                    
+                    <div class="demo-box">
+                        <div class="flexbox-demo">
+                            <div class="flex-item">Item 1</div>
+                            <div class="flex-item">Item 2</div>
+                            <div class="flex-item">Item 3</div>
+                        </div>
+                    </div>
+
+                    <div class="code-box">
+/* Container Properties */
+.container {
+    display: flex;
+    flex-direction: row;        /* row, column */
+    justify-content: center;    /* Main axis alignment */
+    align-items: center;        /* Cross axis alignment */
+    flex-wrap: wrap;            /* Wrap items */
+    gap: 10px;                  /* Space between items */
+}
+
+/* Item Properties */
+.item {
+    flex: 1;                    /* Grow &amp; shrink */
+    flex-grow: 1;               /* Ability to grow */
+    flex-shrink: 1;             /* Ability to shrink */
+    flex-basis: auto;           /* Initial size */
+    align-self: center;         /* Individual alignment */
+}
+                    </div>
+
+                    <div class="important">
+                        <strong>Interview Q:</strong> Difference between justify-content and align-items?<br>
+                        <strong>Answer:</strong> justify-content aligns items along main axis (horizontal in row), align-items aligns along cross axis (vertical in row).
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5: Grid -->
+            <div class="section">
+                <h2 class="section-title">5. CSS Grid Layout</h2>
+                <span class="interview-tag">⭐ Interview Important</span>
+                
+                <div class="note-card">
+                    <div class="note-title">Grid Basics</div>
+                    <p>CSS Grid is a two-dimensional layout system for creating complex layouts.</p>
+                    
+                    <div class="demo-box">
+                        <div class="grid-demo">
+                            <div class="grid-item">1</div>
+                            <div class="grid-item">2</div>
+                            <div class="grid-item">3</div>
+                            <div class="grid-item">4</div>
+                        </div>
+                    </div>
+
+                    <div class="code-box">
+/* Container Properties */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 equal columns */
+    grid-template-rows: 100px auto;     /* 2 rows */
+    gap: 20px;                          /* Space between */
+    grid-template-areas:
+        "header header header"
+        "sidebar main main"
+        "footer footer footer";
+}
+
+/* Item Properties */
+.item1 {
+    grid-column: 1 / 3;    /* Span 2 columns */
+    grid-row: 1 / 2;       /* Span 1 row */
+}
+
+.item2 {
+    grid-area: header;     /* Use template area */
+}
+                    </div>
+
+                    <div class="important">
+                        <strong>Interview Q:</strong> When to use Flexbox vs Grid?<br>
+                        <strong>Answer:</strong> Flexbox for 1D layouts (row OR column). Grid for 2D layouts (rows AND columns). Grid is better for complex layouts.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 6: Positioning -->
+            <div class="section">
+                <h2 class="section-title">6. CSS Positioning</h2>
+                <span class="interview-tag">⭐ Interview Important</span>
+                
+                <div class="note-card">
+                    <div class="note-title">Position Property</div>
+                    
+                    <div class="code-box">
+/* Static (Default) */
+.static {
+    position: static;
+    /* Normal document flow */
+}
+
+/* Relative */
+.relative {
+    position: relative;
+    top: 20px;
+    left: 30px;
+    /* Offset from normal position */
+}
+
+/* Absolute */
+.absolute {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* Positioned relative to nearest positioned ancestor */
+}
+
+/* Fixed */
+.fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    /* Fixed to viewport, doesn't move on scroll */
+}
+
+/* Sticky */
+.sticky {
+    position: sticky;
+    top: 0;
+    /* Toggles between relative and fixed */
+}
+                    </div>
+
+                    <div class="important">
+                        <strong>Interview Q:</strong> Difference between absolute and fixed?<br>
+                        <strong>Answer:</strong> Absolute positions relative to nearest positioned parent. Fixed positions relative to viewport and stays fixed during scroll.
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Z-Index &amp; Stacking Context</div>
+                    
+                    <div class="code-box">
+/* Z-index controls stacking order */
+.element1 {
+    position: relative;
+    z-index: 10;  /* Higher = on top */
+}
+
+.element2 {
+    position: relative;
+    z-index: 5;   /* Lower = behind */
+}
+
+/* Z-index only works on positioned elements */
+/* position: relative, absolute, fixed, or sticky */
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 7: Animations -->
+            <div class="section">
+                <h2 class="section-title">7. CSS Animations</h2>
+                <span class="interview-tag">⭐ Interview Important</span>
+                
+                <div class="note-card">
+                    <div class="note-title">Transitions</div>
+                    
+                    <div class="demo-box">
+                        <div style="width: 100px; height: 100px; background: #3498db; transition: all 0.3s ease; margin: 0 auto;" onmouseover="this.style.transform='scale(1.5)'; this.style.background='#e74c3c';" onmouseout="this.style.transform='scale(1)'; this.style.background='#3498db';">
+                            Hover Me!
+                        </div>
+                    </div>
+
+                    <div class="code-box">
+/* Transition Syntax */
+.element {
+    transition: property duration timing-function delay;
+}
+
+/* Examples */
+.button {
+    background: blue;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background: red;
+    transform: scale(1.1);
+}
+
+/* Multiple Properties */
+.box {
+    transition: 
+        width 2s ease,
+        height 2s ease 1s,
+        background 1s;
+}
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Keyframe Animations</div>
+                    
+                    <div class="demo-box">
+                        <div class="animation-demo demo-rotate">ROTATE</div>
+                        <div class="animation-demo demo-scale">SCALE</div>
+                        <div class="animation-demo demo-bounce">BOUNCE</div>
+                        <div class="animation-demo demo-fade">FADE</div>
+                    </div>
+
+                    <div class="code-box">
+/* Keyframes Syntax */
+@keyframes animationName {
+    0% { /* Starting state */ }
+    50% { /* Midpoint */ }
+    100% { /* Ending state */ }
+}
+
+/* Apply Animation */
+.element {
+    animation: animationName 3s ease infinite;
+}
+
+/* Rotate Animation */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.rotating {
+    animation: rotate 3s linear infinite;
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+}
+
+.bouncing {
+    animation: bounce 1s ease-in-out infinite;
+}
+
+/* Fade In Out */
+@keyframes fadeInOut {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+                    </div>
+
+                    <div class="important">
+                        <strong>Interview Q:</strong> Difference between transition and animation?<br>
+                        <strong>Answer:</strong> Transitions are simple state changes (hover effects). Animations use keyframes for complex, multi-step animations that can loop.
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Transform Property</div>
+                    
+                    <div class="code-box">
+/* 2D Transforms */
+.element {
+    transform: translate(50px, 100px);  /* Move */
+    transform: rotate(45deg);           /* Rotate */
+    transform: scale(1.5);              /* Resize */
+    transform: skew(20deg, 10deg);      /* Skew */
+}
+
+/* 3D Transforms */
+.element3d {
+    transform: rotateX(45deg);
+    transform: rotateY(45deg);
+    transform: rotateZ(45deg);
+    transform: perspective(500px);
+}
+
+/* Multiple Transforms */
+.multi {
+    transform: translate(50px, 50px) 
+               rotate(45deg) 
+               scale(1.5);
+}
+
+/* Transform Origin */
+.element {
+    transform-origin: center center; /* Default */
+    transform-origin: top left;
+    transform-origin: 50% 50%;
+}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 8: Responsive Design -->
+            <div class="section">
+                <h2 class="section-title">8. Responsive Design</h2>
+                <span class="interview-tag">⭐ Interview Important</span>
+                
+                <div class="note-card">
+                    <div class="note-title">Media Queries</div>
+                    
+                    <div class="code-box">
+/* Basic Media Query */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Common Breakpoints */
+/* Mobile First Approach */
+@media (min-width: 576px) { /* Small devices */ }
+@media (min-width: 768px) { /* Tablets */ }
+@media (min-width: 992px) { /* Laptops */ }
+@media (min-width: 1200px) { /* Desktops */ }
+
+/* Multiple Conditions */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Tablet styles */
+}
+
+/* Orientation */
+@media (orientation: portrait) { }
+@media (orientation: landscape) { }
+                    </div>
+
+                    <div class="important">
+                        <strong>Interview Q:</strong> What is Mobile First approach?<br>
+                        <strong>Answer:</strong> Design for mobile devices first, then use min-width media queries to add styles for larger screens. More efficient and better UX.
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Responsive Units</div>
+                    
+                    <div class="code-box">
+/* Absolute Units */
+px    /* Pixels - fixed size */
+
+/* Relative Units */
+%     /* Percentage of parent */
+em    /* Relative to parent font-size */
+rem   /* Relative to root font-size */
+vw    /* 1% of viewport width */
+vh    /* 1% of viewport height */
+vmin  /* 1% of smaller viewport dimension */
+vmax  /* 1% of larger viewport dimension */
+
+/* Examples */
+.container {
+    width: 80%;              /* Flexible width */
+    max-width: 1200px;       /* But not too wide */
+    padding: 2rem;           /* Scalable spacing */
+    font-size: 1.2rem;       /* Scalable text */
+}
+
+.hero {
+    height: 100vh;           /* Full viewport height */
+    font-size: 5vw;          /* Responsive font */
+}
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Responsive Images</div>
+                    
+                    <div class="code-box">
+/* Flexible Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive Background */
+.hero {
+    background-image: url('image.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Picture Element */
+&lt;picture&gt;
+    &lt;source media="(min-width: 1200px)" 
+            srcset="large.jpg"&gt;
+    &lt;source media="(min-width: 768px)" 
+            srcset="medium.jpg"&gt;
+    &lt;img src="small.jpg" alt="Description"&gt;
+&lt;/picture&gt;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 9: Interview Questions -->
+            <div class="section">
+                <h2 class="section-title">9. Top Interview Questions</h2>
+                <span class="interview-tag">⭐ Must Know</span>
+                
+                <div class="note-card">
+                    <div class="note-title">Q1: What is the CSS Box Model?</div>
+                    <p><strong>Answer:</strong> The CSS box model describes how elements are rendered. It consists of content, padding, border, and margin. box-sizing: border-box includes padding and border in the element's total width/height.</p>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q2: Explain CSS Specificity</div>
+                    <p><strong>Answer:</strong> Specificity determines which CSS rule applies when multiple rules target the same element. Order (highest to lowest): Inline styles (1000) &gt; IDs (100) &gt; Classes/Attributes (10) &gt; Elements (1). !important overrides everything but should be avoided.</p>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q3: Difference between display: none and visibility: hidden?</div>
+                    <p><strong>Answer:</strong> display: none removes element from document flow (no space taken). visibility: hidden hides element but space remains. display: none affects layout, visibility: hidden doesn't.</p>
+                    <div class="code-box">
+.hidden1 { display: none; }      /* Removes from layout */
+.hidden2 { visibility: hidden; } /* Invisible but takes space */
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q4: What is Flexbox and when to use it?</div>
+                    <p><strong>Answer:</strong> Flexbox is a 1D layout model for arranging items in rows or columns. Use it for: navigation bars, card layouts, centering elements, responsive components. Main properties: display: flex, justify-content, align-items, flex-direction.</p>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q5: Difference between position: absolute and position: relative?</div>
+                    <p><strong>Answer:</strong></p>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>Relative:</strong> Positioned relative to its normal position. Still occupies space in document flow.</li>
+                        <li><strong>Absolute:</strong> Positioned relative to nearest positioned ancestor. Removed from document flow.</li>
+                    </ul>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q6: What is the difference between margin and padding?</div>
+                    <p><strong>Answer:</strong></p>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>Margin:</strong> Space OUTSIDE the border. Creates space between elements. Transparent.</li>
+                        <li><strong>Padding:</strong> Space INSIDE the border. Creates space between content and border. Takes background color.</li>
+                    </ul>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q7: Explain the difference between inline, block, and inline-block?</div>
+                    <p><strong>Answer:</strong></p>
+                    <div class="code-box">
+/* Block */
+- Takes full width available
+- Starts on new line
+- Width &amp; height can be set
+- Example: div, p, h1
+
+/* Inline */
+- Takes only needed width
+- Doesn't break line
+- Width &amp; height CANNOT be set
+- Example: span, a, strong
+
+/* Inline-block */
+- Takes only needed width
+- Doesn't break line
+- Width &amp; height CAN be set
+- Best of both worlds!
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q8: What are pseudo-classes and pseudo-elements?</div>
+                    <p><strong>Answer:</strong></p>
+                    <div class="code-box">
+/* Pseudo-classes (single colon, targets state) */
+a:hover { }        /* When mouse hovers */
+input:focus { }    /* When input focused */
+li:first-child { } /* First child */
+li:nth-child(2) { }/* Second child */
+
+/* Pseudo-elements (double colon, creates element) */
+p::before { content: "→ "; }  /* Before content */
+p::after { content: " ←"; }   /* After content */
+p::first-letter { }           /* First letter */
+p::first-line { }             /* First line */
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q9: How do you center a div horizontally and vertically?</div>
+                    <p><strong>Answer:</strong> Multiple methods:</p>
+                    <div class="code-box">
+/* Method 1: Flexbox (Best) */
+.parent {
+    display: flex;
+    justify-content: center;  /* Horizontal */
+    align-items: center;      /* Vertical */
+    height: 100vh;
+}
+
+/* Method 2: Grid */
+.parent {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+/* Method 3: Position + Transform */
+.child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Method 4: Margin Auto (horizontal only) */
+.child {
+    width: 300px;
+    margin: 0 auto;
+}
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q10: What is CSS Grid and when to use it?</div>
+                    <p><strong>Answer:</strong> CSS Grid is a 2D layout system for rows AND columns. Use it for: complex page layouts, magazine-style layouts, dashboards, galleries. Better than Flexbox for 2D layouts.</p>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q11: Explain z-index and stacking context</div>
+                    <p><strong>Answer:</strong> z-index controls stacking order of positioned elements. Higher value = on top. Only works on positioned elements (relative, absolute, fixed, sticky). Each positioned element creates a stacking context.</p>
+                    <div class="code-box">
+/* z-index example */
+.element1 {
+    position: relative;
+    z-index: 10;  /* On top */
+}
+
+.element2 {
+    position: relative;
+    z-index: 5;   /* Behind element1 */
+}
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q12: What are CSS animations and transitions?</div>
+                    <p><strong>Answer:</strong></p>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>Transitions:</strong> Smooth change between states (e.g., hover). Simple, 2 states only.</li>
+                        <li><strong>Animations:</strong> Complex, multi-step animations using @keyframes. Can loop, have delays, multiple stages.</li>
+                    </ul>
+                    <div class="code-box">
+/* Transition */
+.button {
+    transition: background 0.3s ease;
+}
+.button:hover {
+    background: red;
+}
+
+/* Animation */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100px); }
+}
+.element {
+    animation: slide 2s infinite;
+}
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q13: What is Mobile-First approach?</div>
+                    <p><strong>Answer:</strong> Design for mobile devices first, then add styles for larger screens using min-width media queries. Benefits: Better performance, better UX, forces prioritization of content.</p>
+                    <div class="code-box">
+/* Mobile First (Better) */
+.container { width: 100%; }
+
+@media (min-width: 768px) {
+    .container { width: 750px; }
+}
+
+@media (min-width: 1200px) {
+    .container { width: 1170px; }
+}
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q14: Difference between em and rem units?</div>
+                    <p><strong>Answer:</strong></p>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>em:</strong> Relative to parent element's font-size. Can compound (2em on 2em parent = 4em)</li>
+                        <li><strong>rem:</strong> Relative to root (html) font-size. Consistent, no compounding. More predictable.</li>
+                    </ul>
+                    <div class="code-box">
+html { font-size: 16px; }
+
+.parent {
+    font-size: 20px;
+}
+
+.child {
+    font-size: 2em;   /* 40px (2 × 20px) */
+    font-size: 2rem;  /* 32px (2 × 16px) */
+}
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q15: What is the CSS float property?</div>
+                    <p><strong>Answer:</strong> Float removes element from normal flow and positions it left/right. Originally for text wrapping around images. Now mostly replaced by Flexbox/Grid, but still used for text wrapping.</p>
+                    <div class="code-box">
+.image {
+    float: left;
+    margin-right: 20px;
+}
+
+/* Clear float */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q16: How do you create a responsive design?</div>
+                    <p><strong>Answer:</strong> Use:</p>
+                    <ul style="margin-left: 20px;">
+                        <li>Flexible layouts (%, rem, fr units)</li>
+                        <li>Media queries for breakpoints</li>
+                        <li>Flexible images (max-width: 100%)</li>
+                        <li>Mobile-first approach</li>
+                        <li>Viewport meta tag</li>
+                        <li>Flexbox/Grid for layouts</li>
+                    </ul>
+                    <div class="code-box">
+/* Viewport meta tag */
+&lt;meta name="viewport" 
+      content="width=device-width, initial-scale=1"&gt;
+
+/* Responsive container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Responsive images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q17: What is CSS specificity hierarchy?</div>
+                    <p><strong>Answer:</strong> From highest to lowest:</p>
+                    <ul style="margin-left: 20px;">
+                        <li>!important (avoid using)</li>
+                        <li>Inline styles (1000 points)</li>
+                        <li>IDs (100 points)</li>
+                        <li>Classes, attributes, pseudo-classes (10 points)</li>
+                        <li>Elements, pseudo-elements (1 point)</li>
+                    </ul>
+                    <div class="code-box">
+/* Specificity examples */
+p { }                    /* 1 point */
+.class { }               /* 10 points */
+#id { }                  /* 100 points */
+div p { }                /* 2 points */
+div.class { }            /* 11 points */
+#id .class p { }         /* 111 points */
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q18: Explain CSS inheritance</div>
+                    <p><strong>Answer:</strong> Some CSS properties are inherited from parent to child (color, font-family, font-size). Others are not (margin, padding, border, width).</p>
+                    <div class="code-box">
+/* Inherited properties */
+- color
+- font-family
+- font-size
+- line-height
+- text-align
+
+/* Force inheritance */
+.child {
+    color: inherit;
+    border: inherit;
+}
+
+/* Not inherited */
+- margin, padding
+- border
+- width, height
+- background
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q19: What is the CSS cascade?</div>
+                    <p><strong>Answer:</strong> Cascade is the algorithm that determines which styles apply when multiple rules target the same element. It considers: Importance (!important), Specificity, Source order (last rule wins).</p>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q20: How to optimize CSS performance?</div>
+                    <p><strong>Answer:</strong></p>
+                    <ul style="margin-left: 20px;">
+                        <li>Minimize CSS file size (minify)</li>
+                        <li>Avoid deep nesting</li>
+                        <li>Use efficient selectors</li>
+                        <li>Remove unused CSS</li>
+                        <li>Use CSS shorthand</li>
+                        <li>Avoid !important</li>
+                        <li>Use CSS preprocessors (Sass/Less)</li>
+                        <li>Load critical CSS inline</li>
+                    </ul>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q21: What are CSS preprocessors?</div>
+                    <p><strong>Answer:</strong> CSS preprocessors (Sass, Less, Stylus) extend CSS with features like variables, nesting, mixins, functions. They compile to regular CSS.</p>
+                    <div class="code-box">
+/* SCSS Example */
+$primary-color: #3498db;
+$spacing: 20px;
+
+.button {
+    background: $primary-color;
+    padding: $spacing;
+    
+    &amp;:hover {
+        background: darken($primary-color, 10%);
+    }
+}
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q22: Explain overflow property</div>
+                    <p><strong>Answer:</strong> Controls what happens when content overflows element's box.</p>
+                    <div class="code-box">
+.element {
+    overflow: visible;  /* Default, shows overflow */
+    overflow: hidden;   /* Hides overflow */
+    overflow: scroll;   /* Always shows scrollbar */
+    overflow: auto;     /* Scrollbar when needed */
+}
+
+/* Separate x and y */
+overflow-x: hidden;
+overflow-y: auto;
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q23: What is CSS BEM methodology?</div>
+                    <p><strong>Answer:</strong> BEM (Block Element Modifier) is a naming convention for CSS classes that makes code more maintainable and understandable.</p>
+                    <div class="code-box">
+/* Block */
+.card { }
+
+/* Element (part of block) */
+.card__title { }
+.card__image { }
+.card__button { }
+
+/* Modifier (variation) */
+.card--featured { }
+.card__button--primary { }
+
+/* Example */
+&lt;div class="card card--featured"&gt;
+    &lt;h2 class="card__title"&gt;Title&lt;/h2&gt;
+    &lt;button class="card__button card__button--primary"&gt;
+        Click
+    &lt;/button&gt;
+&lt;/div&gt;
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q24: Difference between reset.css and normalize.css?</div>
+                    <p><strong>Answer:</strong></p>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>Reset.css:</strong> Removes all default browser styles. Starts from scratch.</li>
+                        <li><strong>Normalize.css:</strong> Makes browsers render elements consistently. Preserves useful defaults.</li>
+                    </ul>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q25: What are CSS variables (Custom Properties)?</div>
+                    <p><strong>Answer:</strong> CSS variables allow you to store values and reuse them throughout your CSS. Defined with -- and accessed with var().</p>
+                    <div class="code-box">
+/* Define variables */
+:root {
+    --primary-color: #3498db;
+    --spacing: 20px;
+    --font-size: 16px;
+}
+
+/* Use variables */
+.button {
+    background: var(--primary-color);
+    padding: var(--spacing);
+    font-size: var(--font-size);
+}
+
+/* With fallback */
+.element {
+    color: var(--text-color, black);
+}
+
+/* Change with JavaScript */
+document.documentElement.style
+    .setProperty('--primary-color', 'red');
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q26: Explain object-fit property</div>
+                    <p><strong>Answer:</strong> Controls how an image or video fits inside its container.</p>
+                    <div class="code-box">
+img {
+    width: 300px;
+    height: 200px;
+    object-fit: fill;      /* Stretch (default) */
+    object-fit: contain;   /* Fit inside, maintain ratio */
+    object-fit: cover;     /* Fill container, crop if needed */
+    object-fit: none;      /* Original size */
+    object-fit: scale-down;/* Smaller of none/contain */
+}
+
+/* Position the object */
+object-position: center;
+object-position: top right;
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q27: What is CSS Grid vs Flexbox?</div>
+                    <p><strong>Answer:</strong></p>
+                    <div class="code-box">
+/* Flexbox - 1D (row OR column) */
+- Single dimension layout
+- Content-first (size based on content)
+- Best for: navbars, card rows, centering
+- Properties: flex-direction, justify-content
+
+/* Grid - 2D (rows AND columns) */
+- Two dimension layout
+- Layout-first (explicit grid structure)
+- Best for: page layouts, complex grids
+- Properties: grid-template-columns/rows
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q28: How to create a CSS triangle?</div>
+                    <p><strong>Answer:</strong> Use borders with transparent sides.</p>
+                    <div class="code-box">
+/* Triangle pointing up */
+.triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #3498db;
+}
+
+/* Triangle pointing down */
+.triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid #3498db;
+}
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q29: What is Critical CSS?</div>
+                    <p><strong>Answer:</strong> Critical CSS is the minimum CSS needed to render above-the-fold content. It's inlined in HTML head for faster initial page load. Rest of CSS is loaded asynchronously.</p>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">Q30: Explain CSS counters</div>
+                    <p><strong>Answer:</strong> CSS counters let you create automatic numbering using CSS.</p>
+                    <div class="code-box">
+/* Ordered list with custom numbers */
+ol {
+    counter-reset: my-counter;
+    list-style: none;
+}
+
+ol li::before {
+    counter-increment: my-counter;
+    content: counter(my-counter) ". ";
+    color: red;
+    font-weight: bold;
+}
+
+/* Nested counters */
+ol {
+    counter-reset: section;
+}
+
+ol li::before {
+    counter-increment: section;
+    content: counters(section, ".") " ";
+}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bonus Tips -->
+            <div class="section">
+                <h2 class="section-title">10. Pro Tips &amp; Best Practices</h2>
+                <span class="interview-tag">⭐ Must Know</span>
+
+                <div class="note-card">
+                    <div class="note-title">💡 CSS Best Practices</div>
+                    <ul style="margin-left: 20px; line-height: 2;">
+                        <li>✅ Use external CSS files</li>
+                        <li>✅ Use meaningful class names</li>
+                        <li>✅ Follow naming conventions (BEM)</li>
+                        <li>✅ Keep specificity low</li>
+                        <li>✅ Avoid !important</li>
+                        <li>✅ Use CSS variables for consistency</li>
+                        <li>✅ Mobile-first responsive design</li>
+                        <li>✅ Minimize nesting (max 3 levels)</li>
+                        <li>✅ Group related properties</li>
+                        <li>✅ Comment complex code</li>
+                        <li>✅ Use shorthand properties</li>
+                        <li>✅ Optimize for performance</li>
+                    </ul>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">🚀 Common CSS Patterns</div>
+                    <div class="code-box">
+/* Clearfix */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Truncate text with ellipsis */
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Aspect ratio box */
+.aspect-ratio-16-9 {
+    aspect-ratio: 16 / 9;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Hide scrollbar but keep functionality */
+.no-scrollbar {
+    overflow: auto;
+    scrollbar-width: none; /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+}
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-title">🎯 CSS Interview Prep Checklist</div>
+                    <ul style="margin-left: 20px; line-height: 2;">
+                        <li>✓ Box Model (content, padding, border, margin)</li>
+                        <li>✓ Specificity &amp; Cascade</li>
+                        <li>✓ Positioning (relative, absolute, fixed, sticky)</li>
+                        <li>✓ Flexbox vs Grid</li>
+                        <li>✓ Responsive Design &amp; Media Queries</li>
+                        <li>✓ CSS Animations &amp; Transitions</li>
+                        <li>✓ Pseudo-classes &amp; Pseudo-elements</li>
+                        <li>✓ Display property values</li>
+                        <li>✓ Units (px, em, rem, %, vw, vh)</li>
+                        <li>✓ CSS Variables</li>
+                        <li>✓ Inheritance &amp; Cascade</li>
+                        <li>✓ Z-index &amp; Stacking Context</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div></body></html>
