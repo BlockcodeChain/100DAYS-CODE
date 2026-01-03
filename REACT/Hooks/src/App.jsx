@@ -1,6 +1,6 @@
 import React from 'react'
 import Count from './Count'
-
+import Profile from './Components/Profile'
 import TodoList from './Components/TodoList'
 import Store from './Components/Store'
 const App = () => {
@@ -8,10 +8,10 @@ const App = () => {
   return (
     <div>
       <h1>soda</h1>
-     <Count/>
-    
-     {/* <TodoList/> */}
-     <Store/>
+      {/* <Count/>
+     <TodoList/> 
+     <Store/>  */}
+     <Profile/>
     </div>
   )
 }
