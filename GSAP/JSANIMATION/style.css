@@ -1,0 +1,52 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(28, 28, 28);
+
+}
+.sidebar{
+    height:100vh;
+    width:30%;
+    position:fixed;
+    background-color:rgb(128, 128, 128);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:1s all ease-in-out;
+   
+
+}
+ul li{
+    list-style: none;
+    margin-bottom: 10px;
+}
+ul li a{
+    text-decoration: none;
+    font-size: 1.3rem;
+     color:white;
+}
+.btn{
+
+
+padding:5px 10px;
+font-size:1rem;
+color:white;
+border:none;
+background-color: rgb(252, 13, 13);
+border-radius: 10px;
+}
+.hide{
+    transform:translateX(-230px)
+}
+.center{
+width:100vw;
+height:100vh;
+margin:0 auto;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}

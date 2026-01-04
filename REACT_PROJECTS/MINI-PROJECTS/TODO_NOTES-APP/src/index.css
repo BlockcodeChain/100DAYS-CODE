@@ -1,0 +1,18 @@
+@import "tailwindcss";
+ :root {
+    /* 🌞 LIGHT THEME */
+    --bg-main: theme(colors.slate.100);
+    --bg-card: theme(colors.white);
+    --bg-box: theme(colors.slate.200);
+    --text-main: theme(colors.slate.900);
+    --border-main: theme(colors.slate.300);
+  }
+
+  .dark {
+    /* 🌙 DARK THEME */
+    --bg-main: theme(colors.slate.900);
+    --bg-card: theme(colors.slate.800);
+    --bg-box: theme(colors.slate.600);
+    --text-main: theme(colors.slate.100);
+    --border-main: theme(colors.slate.600);
+  }
