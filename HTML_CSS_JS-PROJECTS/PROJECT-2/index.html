@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Quiz App</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Start Screen -->
+    <div class="center screen active">
+        <h1 class="heading">Quiz Time!</h1>
+        <p>Test your knowledge with these fun questions</p>
+        <button type="button" class="btn start">Start Quiz</button>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div class="screen" id="quiz-screen">
+        <div class="center quizquestion">
+            <h2 class="question">Question goes here</h2>
+            <div class="info">
+                <p>Question <span id="currentq">1</span> of <span class="totalq">5</span></p>
+                <p>Score: <span class="score">0</span></p>
+            </div>
+            <div id="ans"></div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Result Screen -->
+    <div class="screen result">
+        <div class="center resultbox">
+            <h1>Quiz Results</h1>
+            <div class="msg">
+                <p class="resultmsg">You scored <span id="final-score">0</span> out of <span id="max-score">5</span></p>
+                <h2 id="result-msg">Good job!</h2>
+            </div>
+            <button type="button" class="btn restart">Restart Quiz</button>
+        </div>
+    </div>
+
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>

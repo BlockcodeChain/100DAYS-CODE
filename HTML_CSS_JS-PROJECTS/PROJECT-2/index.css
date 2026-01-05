@@ -1,0 +1,162 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container{
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+.center{
+    background-color: white;
+    width: 80%;
+    min-width: 300px;
+    max-width: 600px;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0 auto;
+}
+
+.heading{
+    padding:10px 0;
+    font-size: 2rem;
+    color: orangered;
+}
+
+p{
+    color: rgb(109, 109, 109);
+    font-size: 0.9rem;
+}
+
+.btn{
+    margin-top: 20px;
+    padding: 10px 22px;
+    font-size: 0.9rem;
+    background-color: orangered;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: rgb(255, 47, 0);
+}
+
+.screen{
+    display: none;
+}
+
+.screen.active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Quiz Screen */
+.quizquestion{
+    width: 100%;
+    padding: 20px;
+}
+
+.info{
+    padding: 18px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#ans{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  
+}
+
+#ans button{
+    border-radius: 8px;
+    background-color: rgba(245, 206, 155, 0.7);
+    height: 45px;
+    font-size: 1rem;
+    
+    color: black;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 15px;
+}
+
+#ans button.correct{
+   
+    border: 2px solid green;
+    background-color: rgba(144, 238, 144, 0.4);
+}
+
+#ans button.wrong{
+    border: 2px solid red;
+    background-color: rgba(255, 99, 71, 0.3);
+}
+
+.progress-bar{
+    width: 100%;
+    height: 10px;
+    background-color: rgb(200, 200, 200);
+    border-radius: 7px;
+    margin-top: 15px;
+}
+
+.progress{
+    height: 100%;
+    border-radius: 5px;
+    width: 0%;
+    background: linear-gradient(50deg ,rgb(29, 165, 220), rgb(244, 70, 99));
+}
+
+/* Result Screen */
+.resultbox{
+    width: 100%;
+}
+.msg{
+    background-color: rgba(253, 189, 105, 0.644);
+    border-radius: 10px;
+    padding:15px 10px;
+    text-align: center;
+    color: orangered;
+}
+.resultmsg{
+    color:black;
+    padding:10px;
+}
+#result-msg{
+    margin-top: 10px;
+    color: green;
+    font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 600px){
+    .quizquestion{
+        padding: 15px;
+    }
+    #ans button{
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+}
