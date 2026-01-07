@@ -13,13 +13,14 @@ camera.position.x=8;
 // renderer 
 const canvas=document.querySelector(".threejs")
 const renderer= new THREE.WebGLRenderer({canvas})
-renderer.setSize(innerWidth,innerHeight)
+
 const control=new OrbitControls(camera,canvas)
 // const controls = new OrbitControls(camera, renderer.domElement);
 control.enableDamping=true;
 control.autoRotate=true
 const loop=()=>{
   control.update()
+  renderer.setSize(innerWidth,innerHeight)
   renderer.render(scene ,camera)
   window.requestAnimationFrame(loop)
 
